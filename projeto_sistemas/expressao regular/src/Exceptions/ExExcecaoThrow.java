@@ -7,7 +7,7 @@ public class ExExcecaoThrow {
         Scanner leia = new Scanner(System.in);
         int idade = leia.nextInt();
         if(idade<18){
-            throw new IllegalAccessException("idade minima é 18 anos");
+            throw new IllegalArgumentException("idade minima é 18 anos");
         }
         leia.close();
     }
