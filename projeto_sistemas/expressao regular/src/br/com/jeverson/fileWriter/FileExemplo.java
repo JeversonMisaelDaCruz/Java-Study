@@ -5,13 +5,16 @@ import br.com.jeverson.logging.ExemploLogger;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class FileExemplo {
     public static void main(String[] args) {
+
+
         try {
-            FileWriter escritor = new FileWriter("exemplo.txt");
+            FileWriter escritor = new FileWriter("teste.txt",true);
             BufferedWriter buffer = new BufferedWriter(escritor);
             buffer.write("Hello World");
             buffer.newLine();
