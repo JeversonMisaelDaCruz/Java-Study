@@ -1,9 +1,16 @@
+
+
 package agenda;
 
+import java.util.Scanner;
+
 public class Contato {
-    private String nome;
-     private String telefone;
-     private String email;
+    String nome;
+    String telefone;
+    String email;
+
+    public Contato() {
+    }
 
     public Contato(String nome, String telefone, String email) {
         this.nome = nome;
@@ -11,8 +18,6 @@ public class Contato {
         this.email = email;
     }
 
-    public void contato(){
-    }
     public String getNome() {
         return nome;
     }
@@ -35,5 +40,14 @@ public class Contato {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    public void escreverContato(Scanner leia){
+        nome = leia.nextLine();
+        System.out.println("Escreva o nome do contato");
+        nome = leia.nextLine();
+        System.out.println("Escreva o telefone do contato");
+        telefone = leia.nextLine();
+        System.out.println("Escreva o email do contato");
+        email = leia.nextLine();
     }
 }
