@@ -16,9 +16,9 @@ class Main {
         Contato contato = new Contato();
         persistencia.criarArquivo();
 
-        while(escolha<3){
+        while(escolha<4){
 
-            System.out.println("O que voce quer fazer? 1 - inserir contato ; 2 - listar contatos ; 3 - sair");
+            System.out.println("O que voce quer fazer? 1 - inserir contato ; 2 - listar contatos 3 - editar contato; 4 - sair");
             escolha = leia.nextInt();
 
             switch(escolha){
@@ -40,6 +40,27 @@ class Main {
 
                     break;
                 case 3:
+
+                    System.out.println("Digite o nome do contato que deseja editar:");
+                    String nomeAntigo = leia.next();
+
+                    System.out.println("Novo nome:");
+                    String novoNome = leia.next();
+
+                    System.out.println("Novo telefone:");
+                    String novoTelefone = leia.next();
+
+                    System.out.println("Novo email:");
+                    String novoEmail = leia.next();
+
+                    Contato contatoEditado = new Contato();
+                    contatoEditado.setNome(novoNome);
+                    contatoEditado.setTelefone(novoTelefone);
+                    contatoEditado.setEmail(novoEmail);
+
+                    persistencia.editarArquivo(nomeAntigo, contatoEditado);
+                break;
+                case 4:
                     System.out.println("Tchau");
                     break;
             }

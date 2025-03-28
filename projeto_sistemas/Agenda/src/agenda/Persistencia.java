@@ -60,5 +60,34 @@ public class Persistencia {
 
 
     }
+    public void editarArquivo(String nomeAntigo, Contato contatoEditado) {
+        File arquivoTemp = new File("Contatos_temp.txt");
+
+        try (BufferedReader lerArquivo = new BufferedReader(new FileReader(arquivo));
+             BufferedWriter buffer = new BufferedWriter(new FileWriter(arquivoTemp))) {
+
+            String linha;
+            while ((linha = lerArquivo.readLine()) != null) {
+                String[] valores = linha.split(";");
+                if (valores[0].equalsIgnoreCase(nomeAntigo)) {
+                    buffer.write(contatoEditado.getNome() + ";" + contatoEditado.getTelefone() + ";" + contatoEditado.getEmail());
+                } else {
+                    buffer.write(linha);
+                }
+                buffer.newLine();
+            }
+
+        } catch (IOException e) {
+            System.out.println("Erro ao editar arquivo!");
+            return;
+        }
+
+        if (!arquivoTemp.renameTo(new File(arquivo))) {
+            System.out.println("Erro ao substituir o arquivo original!");
+        } else {
+            System.out.println("Contato editado com sucesso!");
+        }
+    }
+
 
 }
