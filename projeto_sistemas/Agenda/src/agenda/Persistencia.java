@@ -47,7 +47,7 @@ public class Persistencia {
                 Contato contato = new Contato();
                 contato.setNome(valores[0]);
                 contato.setTelefone(valores[1]);
-                contato.setEmail(valores[3]);
+                contato.setEmail(valores[2]);
                 System.out.println(contato.getNome());
                 System.out.println(contato.getTelefone());
                 System.out.println(contato.getEmail());
