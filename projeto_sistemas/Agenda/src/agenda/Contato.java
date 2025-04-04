@@ -1,7 +1,4 @@
-
-
 package agenda;
-
 import java.util.Scanner;
 
 public class Contato {
